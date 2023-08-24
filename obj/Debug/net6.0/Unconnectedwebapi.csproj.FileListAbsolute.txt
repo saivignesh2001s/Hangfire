@@ -55,3 +55,9 @@ C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\sv\Hangfir
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\tr-TR\Hangfire.Core.resources.dll
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\zh-TW\Hangfire.Core.resources.dll
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\zh\Hangfire.Core.resources.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

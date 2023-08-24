@@ -1,9 +1,12 @@
-﻿using System.Data;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
+using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 using Unconnectedwebapi.Models;
 
 namespace Unconnectedwebapi.Repository
 {
+
     public class Usermethods : IUsermethods
     {
         private readonly IConfiguration configuration;
@@ -67,9 +70,10 @@ namespace Unconnectedwebapi.Repository
                 {
                     return null;
                 }
-            }
-            catch
+        }
+            catch(Exception ex) 
             {
+                Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
                 return null;
             }
 
@@ -91,23 +95,31 @@ namespace Unconnectedwebapi.Repository
             {
                 DataTable k = syncdata();
                 DataRow t = set.Tables[0].Rows.Find(id);
-                t["id"] = Convert.ToInt32(user.id);
-                t["username"] = user.username;
-                t["password"] = user.password;
-                t["useremail"] = user.useremail;
-                SqlCommandBuilder build = new SqlCommandBuilder(ds);
-                int p = ds.Update(set.Tables[0]);
-                if (p == 1)
+                if (t != null)
                 {
-                    return true;
+                    t["id"] = Convert.ToInt32(user.id);
+                    t["username"] = user.username;
+                    t["password"] = user.password;
+                    t["useremail"] = user.useremail;
+                    SqlCommandBuilder build = new SqlCommandBuilder(ds);
+                    int p = ds.Update(set.Tables[0]);
+                    if (p == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
                     return false;
                 }
             }
-            catch
+            catch(Exception ex) 
             {
+                Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
                 return false;
             }
         }
@@ -117,20 +129,28 @@ namespace Unconnectedwebapi.Repository
             {
                 DataTable k = syncdata();
                 DataRow dr = k.Rows.Find(id);
-                dr.Delete();
-                SqlCommandBuilder builder1 = new SqlCommandBuilder(ds);
-                int ks = ds.Update(set.Tables[0]);
-                if (ks == 1)
+                if (dr != null)
                 {
-                    return true;
+                    dr.Delete();
+                    SqlCommandBuilder builder1 = new SqlCommandBuilder(ds);
+                    int ks = ds.Update(set.Tables[0]);
+                    if (ks == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
                     return false;
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Errorlog.Writelog(new string[] { ex.Message+" "+DateTime.Now});
                 return false;
             }
         
@@ -169,4 +189,5 @@ namespace Unconnectedwebapi.Repository
             }
         }
     }
+    
 }
