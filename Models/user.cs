@@ -41,19 +41,19 @@ namespace Unconnectedwebapi.Models
         }
     }
 
-    public class ExceptionFilter : IExceptionFilter
-    {
-        public void OnException(ExceptionContext context)
-        {
-            CustomException cs = new CustomException()
-            {
-                statuscode = 500,
-                message="Internal server Error"
+    //public class ExceptionFilter : IExceptionFilter
+    //{
+    //    public void OnException(ExceptionContext context)
+    //    {
+    //        CustomException cs = new CustomException()
+    //        {
+    //            statuscode = 500,
+    //            message="Internal server Error"
                 
-            };
-            context.Result =new JsonResult(cs);
-        }
-    }
+    //        };
+    //        context.Result =new JsonResult(cs);
+    //    }
+    //}
     public static class Errorlog
     {
         public static void Writelog(string[] k)

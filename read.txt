@@ -2,3 +2,6 @@ Column 'id' is constrained to be unique.  Value '0' is already present. 8/24/202
 Column 'id' is constrained to be unique.  Value '0' is already present. 8/24/2023 10:01:01 AM
 Column 'id' is constrained to be unique.  Value '0' is already present. 8/24/2023 10:15:17 AM
 Object reference not set to an instance of an object. 8/24/2023 10:15:57 AM
+value not found 8/28/2023 11:59:29 AM
+value not found 8/28/2023 12:00:51 PM
+The given key was not present in the dictionary. 8/28/2023 12:02:14 PM

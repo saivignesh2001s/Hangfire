@@ -49,9 +49,9 @@ namespace Unconnectedwebapi.Repository
         }
         public user postuser(user k)
         {
-            try
-            {
-                DataTable pk = syncdata();
+            //try
+            //{
+               DataTable pk = syncdata();
                 DataRow dr = pk.NewRow();
                 dr["id"] = k.id;
                 dr["username"] = k.username;
@@ -70,12 +70,12 @@ namespace Unconnectedwebapi.Repository
                 {
                     return null;
                 }
-        }
-            catch(Exception ex) 
-            {
-                Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
-                return null;
-            }
+        //}
+        //    catch(Exception ex) 
+        //    {
+        //        Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
+        //        return null;
+        //    }
 
         }
         public DataTable syncdata()
@@ -91,8 +91,8 @@ namespace Unconnectedwebapi.Repository
         }
         public bool updateuser(int id,user user)
         {
-            try
-            {
+            //try
+            //{
                 DataTable k = syncdata();
                 DataRow t = set.Tables[0].Rows.Find(id);
                 if (t != null)
@@ -114,14 +114,14 @@ namespace Unconnectedwebapi.Repository
                 }
                 else
                 {
-                    return false;
+                    throw new KeyNotFoundException();
                 }
-            }
-            catch(Exception ex) 
-            {
-                Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
-                return false;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
+            //    return false;
+            //}
         }
         public bool deleteuser(int id)
         {

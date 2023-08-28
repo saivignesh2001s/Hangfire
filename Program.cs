@@ -1,14 +1,15 @@
 using Hangfire;
+using Unconnectedwebapi.CustomMiddleware;
 using Unconnectedwebapi.Models;
 using Unconnectedwebapi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddControllers();
 // Add services to the container.
-builder.Services.AddControllers(cfg =>
-{
-    cfg.Filters.Add(typeof(ExceptionFilter));
-});
+//builder.Services.AddControllers(cfg =>
+//{
+//    cfg.Filters.Add(typeof(ExceptionFilter));
+//});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHangfire(config => config
@@ -17,6 +18,7 @@ builder.Services.AddHangfire(config => config
     .UseSqlServerStorage(builder.Configuration.GetConnectionString("default")));
 builder.Services.AddHangfireServer();
 builder.Services.AddTransient<IUsermethods, Usermethods>();
+builder.Services.AddTransient<ExceptionMiddleware>();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -27,7 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
