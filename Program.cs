@@ -1,10 +1,12 @@
 using Hangfire;
+using Unconnectedwebapi;
 using Unconnectedwebapi.CustomMiddleware;
 using Unconnectedwebapi.Models;
 using Unconnectedwebapi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 // Add services to the container.
 //builder.Services.AddControllers(cfg =>
 //{

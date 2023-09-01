@@ -10,10 +10,10 @@ namespace Unconnectedwebapi.Repository
     public class Usermethods : IUsermethods
     {
         private readonly IConfiguration configuration;
-        string conn = null;
-        SqlConnection cn = null;
-        SqlDataAdapter ds = null;
-        DataSet set = null;
+        string? conn = null;
+        SqlConnection? cn = null;
+        SqlDataAdapter? ds = null;
+        DataSet? set = null;
         public Usermethods(IConfiguration configuration) {
             this.configuration = configuration;
             conn =this.configuration.GetSection("ConnectionStrings:default").Value;
@@ -91,8 +91,8 @@ namespace Unconnectedwebapi.Repository
         }
         public bool updateuser(int id,user user)
         {
-            //try
-            //{
+            try
+            {
                 DataTable k = syncdata();
                 DataRow t = set.Tables[0].Rows.Find(id);
                 if (t != null)
@@ -116,12 +116,12 @@ namespace Unconnectedwebapi.Repository
                 {
                     throw new KeyNotFoundException();
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
-            //    return false;
-            //}
+            }
+            catch (Exception ex)
+            {
+                Errorlog.Writelog(new string[] { ex.Message + " " + DateTime.Now });
+               return false;
+            }
         }
         public bool deleteuser(int id)
         {

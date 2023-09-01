@@ -1,4 +1,5 @@
-﻿using Hangfire;
+﻿using AutoMapper;
+using Hangfire;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Eventing.Reader;
@@ -12,18 +13,22 @@ namespace Unconnectedwebapi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUsermethods method;
-        public UserController(IUsermethods method)
+        private readonly IMapper mapper;
+        public UserController(IUsermethods method,IMapper mapper)
         {
             this.method = method;
+            this.mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Getall()
         {
             var users = method.GetUsers();
+            var user2 = mapper.Map<List<usermodel>>(users);
+            
             if (users != null)
             {
                 BackgroundJob.Enqueue<IUsermethods>(x => x.sendmail("get",null));
-                return Ok(users);
+                return Ok(user2);
             }
             return NoContent();
 
@@ -40,12 +45,17 @@ namespace Unconnectedwebapi.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]user value)
+        public async Task<IActionResult> Post([FromBody]usermodel value)
         {
-            var users=method.postuser(value);
+            var t=mapper.Map<user>(value);
+            Random r=new Random();
+            t.id =r.Next();
+            t.password = "abcd";
+           
+            var users=method.postuser(t);
             if (users != null)
             {
-                BackgroundJob.Enqueue<IUsermethods>(x => x.sendmail("post",value.id));
+                BackgroundJob.Enqueue<IUsermethods>(x => x.sendmail("post",t.id));
                 return Ok(users);
             }
             else
