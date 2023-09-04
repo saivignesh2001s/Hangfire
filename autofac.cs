@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Unconnectedwebapi.CustomMiddleware;
 using Unconnectedwebapi.Repository;
 
 namespace Unconnectedwebapi
@@ -9,6 +10,8 @@ namespace Unconnectedwebapi
         {
             //AddTransient
             builder.RegisterType<Usermethods>().As<IUsermethods>()
+                .InstancePerDependency();
+            builder.RegisterType<ExceptionMiddleware>()
                 .InstancePerDependency();
             //AddScoped
             //builder.RegisterType<Usermethods>().As<IUsermethods>()

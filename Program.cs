@@ -27,7 +27,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
 {
   builder.RegisterModule(new autofacmodule());
 });
-builder.Services.AddTransient<ExceptionMiddleware>();
+//builder.Services.AddTransient<ExceptionMiddleware>();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
