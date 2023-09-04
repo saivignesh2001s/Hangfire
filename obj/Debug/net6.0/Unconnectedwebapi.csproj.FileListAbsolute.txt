@@ -63,3 +63,5 @@ C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\obj\Debug\net6.0\Unconnecte
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\obj\Debug\net6.0\ref\Unconnectedwebapi.dll
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\Autofac.dll
+C:\Users\saivignesh.p\source\repos\Unconnectedwebapi\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll

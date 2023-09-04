@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aB7Z794AgcPB02dnfoNzfqaSG8/qd1nmM43zIzpR1D6mBnz0kdrv3vvb3lZQ/ihEXFQ/KAe2jMozzXD8pz0u7w==",
+  "dgSpecHash": "Q+QGpxP9K/FEyKpsKYDDPMxAAxAJugFYh+7wXjtc96DOUBg/uPwBk1okrQcEUd7ug4ENuePO0x2fcnal2wOcNw==",
   "success": true,
   "projectFilePath": "C:\\Users\\saivignesh.p\\source\\repos\\Unconnectedwebapi\\Unconnectedwebapi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\saivignesh.p\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
+    "C:\\Users\\saivignesh.p\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\hangfire\\1.8.5\\hangfire.1.8.5.nupkg.sha512",
@@ -36,6 +38,7 @@
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\saivignesh.p\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\saivignesh.p\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"

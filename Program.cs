@@ -1,3 +1,5 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Hangfire;
 using Unconnectedwebapi;
 using Unconnectedwebapi.CustomMiddleware;
@@ -19,7 +21,12 @@ builder.Services.AddHangfire(config => config
     .UseRecommendedSerializerSettings()
     .UseSqlServerStorage(builder.Configuration.GetConnectionString("default")));
 builder.Services.AddHangfireServer();
-builder.Services.AddTransient<IUsermethods, Usermethods>();
+//builder.Services.AddTransient<IUsermethods, Usermethods>();'=
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+{
+  builder.RegisterModule(new autofacmodule());
+});
 builder.Services.AddTransient<ExceptionMiddleware>();
 builder.Services.AddSwaggerGen();
 
